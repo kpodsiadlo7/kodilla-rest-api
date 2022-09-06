@@ -34,13 +34,4 @@ public class TrelloController {
     public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return trelloClient.createNewCard(trelloCardDto);
     }
-
-    @GetMapping("cards")
-    public void getTrelloCards(){
-        List<CreatedTrelloCard> trelloCards = trelloClient.getTrelloCard();
-
-        trelloCards.forEach(createdTrelloCard -> {
-            System.out.println(createdTrelloCard.getName() + createdTrelloCard.getBadgesDto());
-        });
-    }
 }
